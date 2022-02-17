@@ -23,21 +23,35 @@ CLINK = -lgfortran -lm -ldl
 
 LIBS = -lm
 
+# extra flags for multithreaded
+OMPFLAGS =-fopenmp
+OMPLIBS =-lgomp
+
 # flags for MATLAB MEX compilation..
 MFLAGS=-compatibleArrayDims -lgfortran -DMWF77_UNDERSCORE1 -lm -ldl   
-MWFLAGS=-c99complex -i8 
+MWFLAGS=-c99complex -i8
+MOMPFLAGS = -D_OPENMP
 
 # location of MATLAB's mex compiler
 MEX=mex
 
 # For experts, location of Mwrap executable
 MWRAP=../../mwrap/mwrap
+MEXLIBS=-lm -ldl -lgfortran
 
 
 # For your OS, override the above by placing make variables in make.inc
 -include make.inc
 
 
+ifneq ($(OMP),OFF)
+  FFLAGS += $(OMPFLAGS)
+  CFLAGS += $(OMPFLAGS)
+  MFLAGS += $(MOMPFLAGS)
+  LIBS += $(OMPLIBS)
+  DYLIBS += $(OMPLIBS)
+  MEXLIBS += $(OMPLIBS)
+endif
 # objects to compile
 #
 # Common objects
@@ -127,13 +141,13 @@ MWRAPFILE = fmpslib
 GATEWAY = $(MWRAPFILE)
 
 matlab:	$(STATICLIBF) fmps/$(GATEWAY).c 
-	$(MEX) -v fmps/$(GATEWAY).c lib-static/$(STATICLIBF) $(MFLAGS) -output fmps/fmpslib $(MEX_LIBS);
+	$(MEX) -v fmps/$(GATEWAY).c lib-static/$(STATICLIBF) $(MFLAGS) -output fmps/fmpslib $(MEXLIBS);
 
 
 mex:  $(STATICLIBF)
 	cd fmps;  $(MWRAP) $(MWFLAGS) -list -mex $(GATEWAY) -mb $(MWRAPFILE).mw;\
 	$(MWRAP) $(MWFLAGS) -mex $(GATEWAY) -c $(GATEWAY).c $(MWRAPFILE).mw;\
-	$(MEX) -v $(GATEWAY).c ../lib-static/$(STATICLIBF) $(MFLAGS) -output $(MWRAPFILE) $(MEX_LIBS); \
+	$(MEX) -v $(GATEWAY).c ../lib-static/$(STATICLIBF) $(MFLAGS) -output $(MWRAPFILE) $(MEXLIBS); \
 
 muller: $(STATICLIBM) test/muller test/mfie
 	cp src/muller/int2-muller muller/
