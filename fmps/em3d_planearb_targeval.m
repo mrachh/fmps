@@ -21,7 +21,7 @@ function [evec,hvec]=em3d_planearb_targeval(rkvec,epol,ntargets,targets)
 evec = zeros(3,ntargets) + 1i*zeros(3,ntargets);
 hvec = zeros(3,ntargets) + 1i*zeros(3,ntargets);
 
-mex_id_ = 'emplanearbtargeval(i dcomplex[], i dcomplex[], i int[x], i double[], io dcomplex[], io dcomplex[])';
-[evec, hvec] = fmps_r2012a(mex_id_, rkvec, epol, ntargets, targets, evec, hvec, 1);
+mex_id_ = 'emplanearbtargeval(i dcomplex[], i dcomplex[], i int64_t[x], i double[], io dcomplex[], io dcomplex[])';
+[evec, hvec] = fmpslib(mex_id_, rkvec, epol, ntargets, targets, evec, hvec, 1);
 
 

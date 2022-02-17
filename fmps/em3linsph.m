@@ -18,8 +18,8 @@ function [ampole]=em3linsph(nterms,cvec)
 ncoefs = (nterms+1)*(2*nterms+1);
 ampole = zeros(ncoefs,1) + 1i*zeros(ncoefs,1);
 
-mex_id_ = 'em3linsph(io dcomplex[], i int[x], i dcomplex[])';
-[ampole] = fmps_r2012a(mex_id_, ampole, nterms, cvec, 1);
+mex_id_ = 'em3linsph(io dcomplex[], i int64_t[x], i dcomplex[])';
+[ampole] = fmpslib(mex_id_, ampole, nterms, cvec, 1);
 
 
 

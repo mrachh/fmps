@@ -39,7 +39,7 @@ gold_jc_data;
 %               without some GMRES expertise.
 %           Set output files 'filename_out' where scattering matrices will be written.
 %
-for freq=11:120
+for freq=11:11
 
 wavelength=gold_jc(freq,2);
 re_n=gold_jc(freq,3);
@@ -90,7 +90,7 @@ fclose(fid);
 %
 %
 
-system(['muller_w32.exe ' config]);
+system(['./int2-muller ' config]);
 %%%system(['muller_w32_omp.exe ' config]);
 %%%system(['muller_w64.exe ' config]);
 %%%system(['muller_w64_omp.exe ' config]);

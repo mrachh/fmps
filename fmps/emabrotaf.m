@@ -22,8 +22,8 @@ function [mpout] = emabrotaf(nterms,rota,mpole)
 ncoefs = (nterms+1)*(2*nterms+1);
 mpout = zeros(ncoefs,1) + 1i*zeros(ncoefs,1);
 
-mex_id_ = 'emabrotaf(i int[x], i double[], i dcomplex[], io dcomplex[])';
-[mpout] = fmps_r2012a(mex_id_, nterms, rota, mpole, mpout, 1);
+mex_id_ = 'emabrotaf(i int64_t[x], i double[], i dcomplex[], io dcomplex[])';
+[mpout] = fmpslib(mex_id_, nterms, rota, mpole, mpout, 1);
 
 
 

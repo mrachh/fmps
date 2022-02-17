@@ -15,8 +15,8 @@ function [frames]=em3orient(rot,nspheres)
 
 frames = zeros(9,nspheres);
 
-mex_id_ = 'em3orient(i double[], i int[x], io double[])';
-[frames] = fmps_r2012a(mex_id_, rot, nspheres, frames, 1);
+mex_id_ = 'em3orient(i double[], i int64_t[x], io double[])';
+[frames] = fmpslib(mex_id_, rot, nspheres, frames, 1);
 
 frames = reshape(frames,3,3,nspheres);
 

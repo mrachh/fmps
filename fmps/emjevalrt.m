@@ -26,7 +26,7 @@ jders = zeros(nterms+1,1) + 1i*zeros(nterms+1,1);
 emtjvals = zeros(nterms+1,1) + 1i*zeros(nterms+1,1);
 emrjvals = zeros(nterms+1,1) + 1i*zeros(nterms+1,1);
 
-mex_id_ = 'emjevalrt(i int[x], i dcomplex[x], io dcomplex[], io dcomplex[], io dcomplex[], io dcomplex[])';
-[jvals, jders, emtjvals, emrjvals] = fmps_r2012a(mex_id_, nterms, z, jvals, jders, emtjvals, emrjvals, 1, 1);
+mex_id_ = 'emjevalrt(i int64_t[x], i dcomplex[x], io dcomplex[], io dcomplex[], io dcomplex[], io dcomplex[])';
+[jvals, jders, emtjvals, emrjvals] = fmpslib(mex_id_, nterms, z, jvals, jders, emtjvals, emrjvals, 1, 1);
 
 

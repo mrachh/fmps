@@ -26,7 +26,7 @@ ncoefs = (nterms+1)*(2*nterms+1);
 aimpole = zeros(ncoefs,1) + 1i*zeros(ncoefs,1);
 bimpole = zeros(ncoefs,1) + 1i*zeros(ncoefs,1);
 
-mex_id_ = 'em3ehformta(i dcomplex[x], i double[], i double[], i dcomplex[], i dcomplex[], i double[], i double[], i int[x], i int[x], i double[x], io dcomplex[], io dcomplex[], i int[x])';
-[aimpole, bimpole] = fmps_r2012a(mex_id_, rk, sphere_xyz, sphere_r, evecs, hvecs, rnodes, weights, nphi, ntheta, sphere_r, aimpole, bimpole, nterms, 1, 1, 1, 1, 1);
+mex_id_ = 'em3ehformta(i dcomplex[x], i double[], i double[], i dcomplex[], i dcomplex[], i double[], i double[], i int64_t[x], i int64_t[x], i double[x], io dcomplex[], io dcomplex[], i int64_t[x])';
+[aimpole, bimpole] = fmpslib(mex_id_, rk, sphere_xyz, sphere_r, evecs, hvecs, rnodes, weights, nphi, ntheta, sphere_r, aimpole, bimpole, nterms, 1, 1, 1, 1, 1);
 
 

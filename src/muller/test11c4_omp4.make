@@ -4,7 +4,7 @@ PROJECT=int2         # for historical reasons we always like to
 
 ###HOST=windows
 HOST=linux
-###HOST=macosx
+HOST=macosx
 
 
 ifeq ($(HOST),linux)
@@ -22,7 +22,7 @@ ifeq ($(HOST),macosx)
 OBJSUF=o
 MODSUF=mod
 FC=gfortran -c 
-FFLAGS=-O2
+FFLAGS=-O2 -std=legacy
 FLINK=gfortran -o $(PROJECT) 
 
 else

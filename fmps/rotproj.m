@@ -37,7 +37,7 @@ mpout = zeros(nterms+1,2*nterms+1)+1i*zeros(nterms+1,2*nterms+1);
 lmp = nterms;
 lmpn = nterms;
 
-mex_id_ = 'rotviaprojvarf90(i double[x], i int[x], i int[x], i int[x], io dcomplex[], i int[x], io dcomplex[], i int[x])';
-[mpole, mpout] = fmps_r2012a(mex_id_, beta, nterms, m1, m2, mpole, lmp, mpout, lmpn, 1, 1, 1, 1, 1, 1);
+mex_id_ = 'rotviaprojvarf90(i double[x], i int64_t[x], i int64_t[x], i int64_t[x], io dcomplex[], i int64_t[x], io dcomplex[], i int64_t[x])';
+[mpole, mpout] = fmpslib(mex_id_, beta, nterms, m1, m2, mpole, lmp, mpout, lmpn, 1, 1, 1, 1, 1, 1);
 
 

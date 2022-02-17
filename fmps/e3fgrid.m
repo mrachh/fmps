@@ -25,7 +25,7 @@ rnodes = zeros(3,nphi*ntheta);
 weights = zeros(1,nphi*ntheta);
 nnodes = 0;
 
-mex_id_ = 'e3fgrid(i int[x], i int[x], i int[x], i int[x], i double[], io double[], io int[])';
-[weights, nnodes] = fmps_r2012a(mex_id_, itype, nquad, nphi, ntheta, rnodes, weights, nnodes, 1, 1, 1, 1);
+mex_id_ = 'e3fgrid(i int64_t[x], i int64_t[x], i int64_t[x], i int64_t[x], i double[], io double[], io int64_t[])';
+[weights, nnodes] = fmpslib(mex_id_, itype, nquad, nphi, ntheta, rnodes, weights, nnodes, 1, 1, 1, 1);
 
 

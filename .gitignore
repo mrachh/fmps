@@ -1,5 +1,10 @@
 *.o
 *~
-int2
+int2*
 scatmatr.txt
 fort.*
+*.tri
+config*
+*mex*
+*.a
+scat.*

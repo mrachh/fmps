@@ -8,6 +8,6 @@ if (nargin == 1 )
 unit2=0;
 end
 
-mex_id_ = 'prini(i int[x], i int[x])';
-fmps_r2012a(mex_id_, unit1, unit2, 1, 1);
+mex_id_ = 'prini(i int64_t[x], i int64_t[x])';
+fmpslib(mex_id_, unit1, unit2, 1, 1);
 

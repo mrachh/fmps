@@ -90,7 +90,7 @@ fclose(fid);
 %
 %
 
-system(['mfie_w32.exe ' config]);
+system(['./int2-mfie ' config]);
 %%%system(['mfie_w32_omp.exe ' config]);
 %%%system(['mfie_w64.exe ' config]);
 %%%system(['mfie_w64_omp.exe ' config]);
