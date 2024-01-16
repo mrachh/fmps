@@ -29,7 +29,7 @@ OMPLIBS =-lgomp
 
 # flags for MATLAB MEX compilation..
 MFLAGS=-compatibleArrayDims -lgfortran -DMWF77_UNDERSCORE1 -lm -ldl   
-MWFLAGS=-c99complex -i8
+MWFLAGS=-c99complex 
 MOMPFLAGS = -D_OPENMP
 
 # location of MATLAB's mex compiler

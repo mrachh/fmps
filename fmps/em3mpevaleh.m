@@ -28,7 +28,7 @@ nnodes=nphi*ntheta;
 evecs = zeros(3,nnodes) + 1i*zeros(3,nnodes);
 hvecs = zeros(3,nnodes) + 1i*zeros(3,nnodes);
 
-mex_id_ = 'em3mpevaleh(i dcomplex[x], i double[], i dcomplex[], i dcomplex[], i int64_t[x], i double[], i double[], io dcomplex[], io dcomplex[], i double[], i double[], i int64_t[x], i int64_t[x])';
+mex_id_ = 'em3mpevaleh(i dcomplex[x], i double[], i dcomplex[], i dcomplex[], i int[x], i double[], i double[], io dcomplex[], io dcomplex[], i double[], i double[], i int[x], i int[x])';
 [evecs, hvecs] = fmpslib(mex_id_, rk, center, aompole, bompole, nterms, sphere_xyz, sphere_r, evecs, hvecs, rnodes, weights, nphi, ntheta, 1, 1, 1, 1);
 
 

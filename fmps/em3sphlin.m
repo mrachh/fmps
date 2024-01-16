@@ -18,7 +18,7 @@ function [cvec]=em3sphlin(nterms,ampole)
 nvec = (nterms+1)*(nterms+1);
 cvec = zeros(nvec,1) + 1i*zeros(nvec,1);
 
-mex_id_ = 'em3sphlin(i dcomplex[], i int64_t[x], io dcomplex[])';
+mex_id_ = 'em3sphlin(i dcomplex[], i int[x], io dcomplex[])';
 [cvec] = fmpslib(mex_id_, ampole, nterms, cvec, 1);
 
 

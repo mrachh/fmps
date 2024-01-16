@@ -25,7 +25,7 @@ function [pvec,mvec]=empol(wavelength,rk,ampole,bmpole,nterms,radius)
 pvec = zeros(3,1) + 1i*zeros(3,1);
 mvec = zeros(3,1) + 1i*zeros(3,1);
 
-mex_id_ = 'empol(i double[x], i dcomplex[x], i dcomplex[], i dcomplex[], i int64_t[x], i double[x], io dcomplex[], io dcomplex[])';
+mex_id_ = 'empol(i double[x], i dcomplex[x], i dcomplex[], i dcomplex[], i int[x], i double[x], io dcomplex[], io dcomplex[])';
 [pvec, mvec] = fmpslib(mex_id_, wavelength, rk, ampole, bmpole, nterms, radius, pvec, mvec, 1, 1, 1, 1);
 
 

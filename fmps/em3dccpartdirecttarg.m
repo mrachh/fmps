@@ -37,7 +37,7 @@ if( ifhvec == 1 ), hvec=zeros(3,nsource)+1i*zeros(3,nsource); end;
 if( ifevectarg == 1 ), evectarg=zeros(3,ntarget)+1i*zeros(3,ntarget); end;
 if( ifhvectarg == 1 ), hvectarg=zeros(3,ntarget)+1i*zeros(3,ntarget); end;
 
-mex_id_ = 'em3dccpartdirecttarg(i dcomplex[x], i int64_t[x], i double[], i int64_t[x], i dcomplex[], i dcomplex[], i int64_t[x], i dcomplex[], i dcomplex[], i int64_t[x], io dcomplex[], i int64_t[x], io dcomplex[], i int64_t[x], i double[], i int64_t[x], io dcomplex[], i int64_t[x], io dcomplex[])';
+mex_id_ = 'em3dccpartdirecttarg(i dcomplex[x], i int[x], i double[], i int[x], i dcomplex[], i dcomplex[], i int[x], i dcomplex[], i dcomplex[], i int[x], io dcomplex[], i int[x], io dcomplex[], i int[x], i double[], i int[x], io dcomplex[], i int[x], io dcomplex[])';
 [evec, hvec, evectarg, hvectarg] = fmpslib(mex_id_, zk, nsource, source, ifcjvec, cjvec, rho_e, ifcmvec, cmvec, rho_m, ifevec, evec, ifhvec, hvec, ntarget, target, ifevectarg, evectarg, ifhvectarg, hvectarg, 1, 1, 1, 1, 1, 1, 1, 1, 1);
 
 if( ifevec == 1 ), U.evec=evec; end;

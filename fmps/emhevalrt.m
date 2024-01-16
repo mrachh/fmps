@@ -26,7 +26,7 @@ hders = zeros(nterms+1,1) + 1i*zeros(nterms+1,1);
 emthvals = zeros(nterms+1,1) + 1i*zeros(nterms+1,1);
 emrhvals = zeros(nterms+1,1) + 1i*zeros(nterms+1,1);
 
-mex_id_ = 'emhevalrt(i int64_t[x], i dcomplex[x], io dcomplex[], io dcomplex[], io dcomplex[], io dcomplex[])';
+mex_id_ = 'emhevalrt(i int[x], i dcomplex[x], io dcomplex[], io dcomplex[], io dcomplex[], io dcomplex[])';
 [hvals, hders, emthvals, emrhvals] = fmpslib(mex_id_, nterms, z, hvals, hders, emthvals, emrhvals, 1, 1);
 
 

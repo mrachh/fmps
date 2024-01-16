@@ -22,7 +22,7 @@ function [evec,hvec]=em3mpeval(rk,center,aompole,bompole,nterms,target)
 evec = zeros(3,1) + 1i*zeros(3,1);
 hvec = zeros(3,1) + 1i*zeros(3,1);
 
-mex_id_ = 'em3mpeval(i dcomplex[x], i double[], i dcomplex[], i dcomplex[], i int64_t[x], i double[], io dcomplex[], io dcomplex[])';
+mex_id_ = 'em3mpeval(i dcomplex[x], i double[], i dcomplex[], i dcomplex[], i int[x], i double[], io dcomplex[], io dcomplex[])';
 [evec, hvec] = fmpslib(mex_id_, rk, center, aompole, bompole, nterms, target, evec, hvec, 1, 1);
 
 

@@ -32,7 +32,7 @@ function [evec,hvec] = em3d_mpole_targeval(nspheres,nterms,ncoefs,omega,eps0,cmu
 evec = zeros(3,ntargets) + 1i*zeros(3,ntargets);
 hvec = zeros(3,ntargets) + 1i*zeros(3,ntargets);
 
-mex_id_ = 'em3dmpoletargeval(i int64_t[x], i int64_t[x], i int64_t[x], i double[x], i dcomplex[x], i dcomplex[x], i double[], i double[], i dcomplex[], i dcomplex[], i int64_t[], i double[], io dcomplex[], io dcomplex[])';
+mex_id_ = 'em3dmpoletargeval(i int[x], i int[x], i int[x], i double[x], i dcomplex[x], i dcomplex[x], i double[], i double[], i dcomplex[], i dcomplex[], i int[], i double[], io dcomplex[], io dcomplex[])';
 [evec, hvec] = fmpslib(mex_id_, nspheres, nterms, ncoefs, omega, eps0, cmu0, center, radius, aompole, bompole, ntargets, targets, evec, hvec, 1, 1, 1, 1, 1, 1);
 
 
